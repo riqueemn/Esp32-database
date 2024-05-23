@@ -3,7 +3,7 @@
 
 
 
-String URL = "http://192.168.1.227/project_folder/project_file.php";
+String URL = "http://192.168.1.227/teste/server.php";
 
 const char* ssid = "LESC"; 
 const char* password = "123456789"; 
