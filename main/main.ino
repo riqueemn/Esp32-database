@@ -3,10 +3,10 @@
 
 
 
-String URL = "http://192.168.1.227/teste/server.php";
+String URL = "http://192.168.1.227/Server_DataBase_Esp32/server.php";
 
 const char* ssid = "LESC"; 
-const char* password = "123456789"; 
+const char* password = "A33669608F"; 
 
 int temperature = 0;
 int humidity = 0;
@@ -23,14 +23,14 @@ void loop() {
     connectWiFi();
   }
 
-  String postData = "temperature=" + String(temperature) + "&humidity=" + String(humidity);
+  String postData = "temperatura=" + String(temperature);
   
   HTTPClient http;
   http.begin(URL);
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   
   int httpCode = http.POST(postData);
-  String payload = "";
+  String payload = http.getString();
 
   if(httpCode > 0) {
     // file found at server
